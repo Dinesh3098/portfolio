@@ -1332,6 +1332,32 @@ ul { list-style: none; }
   font-weight: 600;
 }
 
+.timeline-summary {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+.timeline-summary strong {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+.timeline-group {
+  margin-bottom: 20px;
+}
+
+.timeline-group-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
 /* --- Contact Section --- */
 .contact-grid {
   display: grid;
