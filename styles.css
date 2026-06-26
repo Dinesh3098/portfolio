@@ -1327,6 +1327,11 @@ ul { list-style: none; }
   color: var(--accent);
 }
 
+.timeline-details strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
 /* --- Contact Section --- */
 .contact-grid {
   display: grid;
