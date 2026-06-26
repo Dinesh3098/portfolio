@@ -1,0 +1,12 @@
+<svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="1" y="1" width="42" height="42" rx="10" fill="#0a0a0f" stroke="url(#fav)" stroke-width="2" />
+  <text x="12" y="20" font-family="'Space Grotesk', Arial, sans-serif" font-weight="700" font-size="13" fill="url(#fav)">D</text>
+  <text x="23" y="33" font-family="'Space Grotesk', Arial, sans-serif" font-weight="700" font-size="13" fill="url(#fav)">B</text>
+  <line x1="10" y1="34" x2="34" y2="10" stroke="url(#fav)" stroke-width="1.5" opacity="0.3" />
+  <defs>
+    <linearGradient id="fav" x1="0" y1="0" x2="44" y2="44">
+      <stop offset="0%" stop-color="#2f6df6" />
+      <stop offset="100%" stop-color="#22a6e0" />
+    </linearGradient>
+  </defs>
+</svg>

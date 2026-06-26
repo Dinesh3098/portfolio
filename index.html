@@ -1,0 +1,1296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinesh Bhadane | Senior Backend Engineer</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link
+      rel="alternate icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3Crect width='44' height='44' rx='10' fill='%230a0a0f'/%3E%3Ctext x='8' y='30' font-family='Arial' font-weight='700' font-size='20' fill='%234f86ff'%3EDB%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Loader - Terminal Boot -->
+    <div class="loader" id="loader">
+      <div class="terminal">
+        <div class="terminal-header">
+          <div class="terminal-dots">
+            <span class="dot dot-red"></span>
+            <span class="dot dot-yellow"></span>
+            <span class="dot dot-green"></span>
+          </div>
+          <span class="terminal-title">dinesh@server ~ portfolio</span>
+        </div>
+        <div class="terminal-body" id="terminalBody">
+          <div class="terminal-line" style="--line-delay: 0s">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">ssh dinesh@prod-server</span>
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.06s">
+            <span class="terminal-output dim"
+              >Authenticating... &#9749; verified</span
+            >
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.12s">
+            <span class="terminal-output success">Access granted.</span>
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.18s">
+            <span class="terminal-prompt">$</span>
+            <span class="terminal-cmd">deploy portfolio --prod</span>
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.24s">
+            <span class="terminal-output dim"
+              >[+] Spinning up 17 microservices...</span
+            >
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.30s">
+            <span class="terminal-output dim"
+              >[+] Warming Redis cache... <span class="blink">|</span></span
+            >
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.36s">
+            <span class="terminal-output dim"
+              >[+] Connecting to PostgreSQL...</span
+            >
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.42s">
+            <span class="terminal-output dim"
+              >[+] Asking DNS nicely... (it was DNS)</span
+            >
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.48s">
+            <span class="terminal-output success"
+              >[OK] All systems operational. 0 bugs (that we know of)</span
+            >
+          </div>
+          <div class="terminal-line" style="--line-delay: 0.54s">
+            <span class="terminal-output accent"
+              >>>> Welcome to Dinesh's Portfolio v2.0</span
+            >
+          </div>
+        </div>
+        <div class="terminal-loader-bar">
+          <div class="terminal-loader-progress"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo" data-magnetic>
+          <svg
+            class="logo-svg"
+            width="44"
+            height="44"
+            viewBox="0 0 44 44"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <rect
+              x="1"
+              y="1"
+              width="42"
+              height="42"
+              rx="10"
+              stroke="url(#logoGrad)"
+              stroke-width="2"
+              fill="none"
+            />
+            <text
+              x="12"
+              y="20"
+              font-family="'Space Grotesk', sans-serif"
+              font-weight="700"
+              font-size="13"
+              fill="url(#logoGrad)"
+            >
+              D
+            </text>
+            <text
+              x="23"
+              y="33"
+              font-family="'Space Grotesk', sans-serif"
+              font-weight="700"
+              font-size="13"
+              fill="url(#logoGrad)"
+            >
+              B
+            </text>
+            <line
+              x1="10"
+              y1="34"
+              x2="34"
+              y2="10"
+              stroke="url(#logoGrad)"
+              stroke-width="1.5"
+              opacity="0.3"
+            />
+            <defs>
+              <linearGradient id="logoGrad" x1="0" y1="0" x2="44" y2="44">
+                <stop offset="0%" stop-color="#2f6df6" />
+                <stop offset="100%" stop-color="#22a6e0" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </a>
+        <div class="nav-links">
+          <a href="#about" class="nav-link" data-magnetic>
+            <span class="nav-link-num">01</span>
+            <span class="nav-link-text">About</span>
+          </a>
+          <a href="#skills" class="nav-link" data-magnetic>
+            <span class="nav-link-num">02</span>
+            <span class="nav-link-text">Skills</span>
+          </a>
+          <a href="#projects" class="nav-link" data-magnetic>
+            <span class="nav-link-num">03</span>
+            <span class="nav-link-text">Projects</span>
+          </a>
+          <a href="#experience" class="nav-link" data-magnetic>
+            <span class="nav-link-num">04</span>
+            <span class="nav-link-text">Experience</span>
+          </a>
+          <a href="#ai" class="nav-link" data-magnetic>
+            <span class="nav-link-num">05</span>
+            <span class="nav-link-text">AI</span>
+          </a>
+          <a href="#blog" class="nav-link" data-magnetic>
+            <span class="nav-link-num">06</span>
+            <span class="nav-link-text">Blog</span>
+          </a>
+          <a href="#contact" class="nav-link" data-magnetic>
+            <span class="nav-link-num">07</span>
+            <span class="nav-link-text">Contact</span>
+          </a>
+        </div>
+        <button class="nav-menu-btn" id="menuBtn" aria-label="Toggle menu">
+          <span class="menu-line"></span>
+          <span class="menu-line"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+      <div class="mobile-menu-links">
+        <a href="#about" class="mobile-link"><span>01</span>About</a>
+        <a href="#skills" class="mobile-link"><span>02</span>Skills</a>
+        <a href="#projects" class="mobile-link"><span>03</span>Projects</a>
+        <a href="#experience" class="mobile-link"><span>04</span>Experience</a>
+        <a href="#ai" class="mobile-link"><span>05</span>AI</a>
+        <a href="#blog" class="mobile-link"><span>06</span>Blog</a>
+        <a href="#contact" class="mobile-link"><span>07</span>Contact</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+        <div class="grid-overlay"></div>
+      </div>
+      <div class="hero-content">
+        <div class="hero-tag reveal-up">
+          <span class="tag-dot"></span>
+          Available for work
+        </div>
+        <div class="hero-greeting reveal-up" style="--delay: 0.1s">
+          <span class="greeting-wave">&#128075;</span>
+          <span class="greeting-text">Hello, I'm</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line title-name reveal-up" style="--delay: 0.2s">
+            <span class="title-first">Dinesh</span>
+            <span class="title-last">Bhadane</span>
+          </span>
+        </h1>
+        <div class="hero-role reveal-up" style="--delay: 0.3s">
+          <span class="role-prefix">&gt;</span>
+          <span class="role-static">Senior Backend Engineer</span>
+          <span class="role-separator">|</span>
+          <span class="role-dynamic" id="roleText">System Architect</span>
+          <span class="role-cursor">_</span>
+        </div>
+        <p class="hero-description reveal-up" style="--delay: 0.4s">
+          I build fault-tolerant, observable backend systems for real-time
+          gaming and fintech platforms that stay fast under load. Currently
+          scaling Jumbo to <strong>~600K requests/min</strong> in production.
+        </p>
+        <div class="hero-actions reveal-up" style="--delay: 0.5s">
+          <a href="#projects" class="btn btn-primary" data-magnetic>
+            <span>View Projects</span>
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M7 17L17 7M17 7H7M17 7V17" />
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-outline" data-magnetic>
+            <span>Get in Touch</span>
+          </a>
+        </div>
+        <div class="hero-metrics reveal-up" style="--delay: 0.6s">
+          <div class="metric">
+            <span
+              class="metric-value"
+              data-count="700"
+              data-prefix="~"
+              data-suffix="K"
+              >0</span
+            >
+            <span class="metric-label">Requests / min</span>
+          </div>
+          <div class="metric">
+            <span
+              class="metric-value"
+              data-count="30"
+              data-prefix="~"
+              data-suffix=" Cr+"
+              >0</span
+            >
+            <span class="metric-label">In-game txn / day</span>
+          </div>
+          <div class="metric">
+            <span
+              class="metric-value"
+              data-count="5"
+              data-prefix="~₹"
+              data-suffix=" Cr"
+              >0</span
+            >
+            <span class="metric-label">Peak payment / day</span>
+          </div>
+          <div class="metric">
+            <span
+              class="metric-value"
+              data-count="200"
+              data-prefix="~"
+              data-suffix=" GB"
+              >0</span
+            >
+            <span class="metric-label">Postgres managed</span>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num reveal-up">01</span>
+          <h2 class="section-title reveal-up">
+            About <span class="text-accent">Me</span>
+          </h2>
+        </div>
+        <div class="about-content-full">
+          <div class="about-content">
+            <p class="about-text about-lead reveal-up">
+              Senior Backend Engineer with 5.5+ years of experience building
+              distributed systems, real-time gaming platforms, and cloud-native
+              infrastructure on AWS. I design scalable microservices,
+              fault-tolerant architectures, and high-throughput backend systems
+              leveraging PostgreSQL, caching, and event-driven patterns. I own
+              the full lifecycle, from system design through production
+              operations, reliability, and performance optimization.
+            </p>
+            <p class="about-text reveal-up">
+              I don't just write code. I design systems that survive traffic
+              spikes at 3 AM without waking anyone up. My job is to make sure
+              the infrastructure behind your product is so reliable, you forget
+              it exists.
+            </p>
+            <p class="about-text reveal-up">
+              I think in database schemas, dream in API contracts, and argue
+              with load balancers for a living. If a system can break, I've
+              already thought about it. If it shouldn't break, I've already
+              built it.
+            </p>
+            <div class="about-details reveal-up">
+              <div class="detail">
+                <span class="detail-label">Location</span>
+                <span class="detail-value">Ahmedabad & Delhi, India</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">Education</span>
+                <span class="detail-value">B.E. in Computer Engineering</span>
+              </div>
+              <div class="detail">
+                <span class="detail-label">Interests</span>
+                <span class="detail-value"
+                  >System Design, Architecture, Real-world Problem Solving</span
+                >
+              </div>
+            </div>
+            <a href="#" class="btn btn-primary reveal-up" data-magnetic>
+              <span>Download Resume</span>
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num reveal-up">02</span>
+          <h2 class="section-title reveal-up">
+            My <span class="text-accent">Skills</span>
+          </h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal-up" style="--delay: 0.1s">
+            <div class="skill-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <h3 class="skill-title">Languages</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">TypeScript</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Go</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">SQL</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="--delay: 0.2s">
+            <div class="skill-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <line x1="4" y1="9" x2="20" y2="9" />
+                <line x1="4" y1="14" x2="20" y2="14" />
+                <line x1="9" y1="4" x2="9" y2="20" />
+              </svg>
+            </div>
+            <h3 class="skill-title">Backend</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Node.js</span>
+              <span class="skill-tag">NestJS</span>
+              <span class="skill-tag">REST</span>
+              <span class="skill-tag">WebSockets</span>
+              <span class="skill-tag">Microservices</span>
+              <span class="skill-tag">Event-driven</span>
+              <span class="skill-tag">BullMQ</span>
+              <span class="skill-tag">System Design</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="--delay: 0.3s">
+            <div class="skill-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+              </svg>
+            </div>
+            <h3 class="skill-title">Databases</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">MongoDB</span>
+              <span class="skill-tag">Redis</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="--delay: 0.4s">
+            <div class="skill-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path
+                  d="M22 17H2a3 3 0 0 0 3-3V9a7 7 0 0 1 14 0v5a3 3 0 0 0 3 3z"
+                />
+                <path d="M6 17v1a6 6 0 0 0 12 0v-1" />
+              </svg>
+            </div>
+            <h3 class="skill-title">AWS Cloud</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Lambda</span>
+              <span class="skill-tag">EC2</span>
+              <span class="skill-tag">EKS</span>
+              <span class="skill-tag">S3</span>
+              <span class="skill-tag">API Gateway</span>
+              <span class="skill-tag">Kinesis</span>
+              <span class="skill-tag">Firehose</span>
+              <span class="skill-tag">Step Functions</span>
+              <span class="skill-tag">Glue</span>
+              <span class="skill-tag">Athena</span>
+              <span class="skill-tag">SQS</span>
+              <span class="skill-tag">Cognito</span>
+              <span class="skill-tag">CloudWatch</span>
+              <span class="skill-tag">Personalize</span>
+            </div>
+          </div>
+          <div class="skill-card reveal-up" style="--delay: 0.5s">
+            <div class="skill-icon">
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <polyline points="4 17 10 11 4 5" />
+                <line x1="12" y1="19" x2="20" y2="19" />
+              </svg>
+            </div>
+            <h3 class="skill-title">DevOps & Tools</h3>
+            <div class="skill-tags">
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Kubernetes</span>
+              <span class="skill-tag">Terraform</span>
+              <span class="skill-tag">NGINX</span>
+              <span class="skill-tag">Airflow</span>
+              <span class="skill-tag">CI/CD</span>
+              <span class="skill-tag">Datadog</span>
+              <span class="skill-tag">Percona</span>
+              <span class="skill-tag">Tailscale</span>
+              <span class="skill-tag">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num reveal-up">03</span>
+          <h2 class="section-title reveal-up">
+            Featured <span class="text-accent">Projects</span>
+          </h2>
+          <p class="section-subtitle reveal-up">
+            Production systems I've shipped across gaming, fintech, drone
+            airspace, and travel. They range from payment infrastructure
+            handling crores in daily volume to real-time platforms tracking
+            thousands of live events.
+          </p>
+        </div>
+      </div>
+      <div class="projects-showcase">
+        <div class="project-card reveal-up" style="--delay: 0.1s">
+          <div class="project-image">
+            <img
+              class="project-img"
+              src="images/jumbo.png"
+              alt="Jumbo — India's first gamified shopping app"
+              loading="lazy"
+            />
+            <div class="project-overlay">
+              <a
+                href="https://joinjumbo.com/"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                data-magnetic
+                aria-label="Visit Jumbo"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-company"
+              >Jumbo &middot; Jun 2024 &mdash; Present</span
+            >
+            <div class="project-tags">
+              <span>NestJS</span>
+              <span>PostgreSQL</span>
+              <span>Redis</span>
+              <span>AWS</span>
+            </div>
+            <h3 class="project-title">
+              Gamified Commerce &amp; Gaming Platform
+            </h3>
+            <p class="project-desc">
+              India's first gamified shopping app. Built the payments service,
+              multi-currency wallet ledger, and the orders module powering
+              checkout, gift cards, and DigiGold. The platform scaled to ~600K
+              req/min, with ₹5 Cr peak daily payments and 30 Cr+ in-game
+              transactions.
+            </p>
+          </div>
+        </div>
+        <div class="project-card reveal-up" style="--delay: 0.2s">
+          <div class="project-image">
+            <img
+              class="project-img"
+              src="images/skyeutm.png"
+              alt="SkyeUTM — drone unmanned traffic management platform"
+              loading="lazy"
+            />
+            <div class="project-overlay">
+              <a
+                href="https://skyeutm.com/operator/home"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                data-magnetic
+                aria-label="Visit SkyeUTM"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-company"
+              >SkyeAir (via CodeChavo) &middot; 2023 &mdash; 2024</span
+            >
+            <div class="project-tags">
+              <span>Node.js</span>
+              <span>AWS Lambda</span>
+              <span>DynamoDB</span>
+              <span>WebSocket</span>
+            </div>
+            <h3 class="project-title">
+              SkyeUTM &mdash; Drone Traffic Management
+            </h3>
+            <p class="project-desc">
+              Serverless backend for an unmanned aircraft traffic-management
+              platform regulating shared airspace. Built the deconfliction
+              engine that continuously verifies 3D separation between aircraft
+              and scaled it to 1,000+ drones tracked live, with real-time
+              WebSocket telemetry and APIs for role management, drone
+              registration, and RPTO batch handling.
+            </p>
+          </div>
+        </div>
+        <div class="project-card reveal-up" style="--delay: 0.3s">
+          <div class="project-image">
+            <img
+              class="project-img"
+              src="images/hosteller.png"
+              alt="The Hosteller — backpacker hostel booking website"
+              loading="lazy"
+            />
+            <div class="project-overlay">
+              <a
+                href="https://www.thehosteller.com/"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                data-magnetic
+                aria-label="Visit The Hosteller"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-company"
+              >Quoality &middot; 2021 &mdash; 2022</span
+            >
+            <div class="project-tags">
+              <span>Node.js</span>
+              <span>GraphQL</span>
+              <span>MongoDB</span>
+              <span>Razorpay</span>
+            </div>
+            <h3 class="project-title">The Hosteller &mdash; Booking Engine</h3>
+            <p class="project-desc">
+              Owned the backend for one of India's largest backpacker hostel
+              chains, spanning 50+ properties across the country.
+              Engineered a custom booking engine on top of the eZee reservation
+              APIs to lift direct guest bookings, with Razorpay payments and an
+              AWS Lambda / S3 / SES serverless stack.
+            </p>
+          </div>
+        </div>
+        <div class="project-card reveal-up" style="--delay: 0.4s">
+          <div class="project-image">
+            <img
+              class="project-img"
+              src="images/skillsture.png"
+              alt="Skillsture — skills learning platform"
+              loading="lazy"
+            />
+            <div class="project-overlay">
+              <a
+                href="https://skillsture.com/"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                data-magnetic
+                aria-label="Visit Skillsture"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-company"
+              >VHM Infotech &middot; 2022 &mdash; 2023</span
+            >
+            <div class="project-tags">
+              <span>Node.js</span>
+              <span>GraphQL</span>
+              <span>Zoom API</span>
+              <span>React</span>
+            </div>
+            <h3 class="project-title">Skillsture &mdash; Learning Platform</h3>
+            <p class="project-desc">
+              A skills-training marketplace connecting learners with instructors
+              across 100+ skills through live, upcoming, and recorded Zoom
+              lectures personalized to the instructors they follow. Built the
+              backend and a GraphQL-powered React admin dashboard, with the Zoom
+              Meeting API driving the live-class scheduling.
+            </p>
+          </div>
+        </div>
+        <div class="project-card reveal-up" style="--delay: 0.5s">
+          <div class="project-image">
+            <img
+              class="project-img"
+              src="images/eautogen.png"
+              alt="eAutoGen — vehicle warranty and insurance platform"
+              loading="lazy"
+            />
+            <div class="project-overlay">
+              <a
+                href="https://www.eautogen.my/"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+                data-magnetic
+                aria-label="Visit eAutoGen"
+              >
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"
+                  />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <span class="project-company"
+              >VHM Infotech &middot; 2022 &mdash; 2023</span
+            >
+            <div class="project-tags">
+              <span>Node.js</span>
+              <span>GraphQL</span>
+              <span>React</span>
+              <span>REST APIs</span>
+            </div>
+            <h3 class="project-title">eAutoGen &mdash; Warranty &amp; Insurance</h3>
+            <p class="project-desc">
+              A vehicle-aftermarket platform where users generate extended
+              warranty and insurance quotes by car brand, model, and year. Built
+              the admin dashboard end to end with GraphQL API integration.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num reveal-up">04</span>
+          <h2 class="section-title reveal-up">
+            Work <span class="text-accent">Experience</span>
+          </h2>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item reveal-up" style="--delay: 0.1s">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">Jun 2024 &mdash; Present</span>
+                  <h3 class="timeline-role">Backend Engineer</h3>
+                  <span class="timeline-company">Jumbo (joinjumbo.com)</span>
+                </div>
+                <span class="timeline-badge">Current</span>
+              </div>
+              <ul class="timeline-details">
+                <li>
+                  Architected the Payment Service and a multi-currency wallet
+                  ledger with multi-gateway integration (Razorpay, Cashfree,
+                  Paytm), version-aware routing, and payment-capture
+                  reconciliation.
+                </li>
+                <li>
+                  Led the Orders module, the largest area of ownership (300+
+                  commits), covering order lifecycle, cash/non-cash deduction
+                  waterfall, gift-card redemption, invoicing, plus Product
+                  Bundling and DigiGold (Augmont) flows.
+                </li>
+                <li>
+                  Built the Transaction History subsystem and an auto-convert
+                  (winnings &rarr; game token) engine with risk-gated
+                  enablement, syncing state across PostgreSQL, MongoDB, and
+                  CleverTap.
+                </li>
+                <li>
+                  Created 17 NestJS modules end to end and integrated
+                  server-side analytics &amp; attribution (Singular S2S,
+                  CleverTap, PostHog); helped scale the platform to ~600K
+                  req/min and 30 Cr+ daily transactions.
+                </li>
+                <li>
+                  Built an async recharge + KYC orchestration layer using a
+                  vendor-agnostic Adapter Pattern (~70% lower third-party cost),
+                  cut backend load ~50% via CDN caching, and served as primary
+                  escalation owner for production incidents.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up" style="--delay: 0.2s">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">2023 &mdash; 2024</span>
+                  <h3 class="timeline-role">Backend Engineer</h3>
+                  <span class="timeline-company"
+                    >SkyeAir &middot; via CodeChavo</span
+                  >
+                </div>
+              </div>
+              <ul class="timeline-details">
+                <li>
+                  Designed and built a serverless backend for SkyeUTM and RPTO,
+                  drone unmanned-traffic-management products.
+                </li>
+                <li>
+                  Engineered a deconfliction system ensuring safe vertical and
+                  horizontal separation between drones, scaling to 1,000+ drones
+                  running live.
+                </li>
+                <li>
+                  Developed APIs for user roles, drone registration/management,
+                  and RPTO batch handling on AWS Lambda, DynamoDB, EventBridge,
+                  Redis, and WebSockets.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up" style="--delay: 0.3s">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+              <div class="timeline-line"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">May 2022 &mdash; Mar 2023</span>
+                  <h3 class="timeline-role">
+                    Backend Engineer &amp; Team Lead
+                  </h3>
+                  <span class="timeline-company">VHM Infotech</span>
+                </div>
+              </div>
+              <ul class="timeline-details">
+                <li>
+                  Led a team of three to deliver multiple products end to end,
+                  choosing technologies per project needs.
+                </li>
+                <li>
+                  Architected and built the backends for Skillsture and
+                  eAutoGen, integrating GraphQL APIs with React admin dashboards.
+                </li>
+                <li>
+                  Implemented Socket.IO real-time messaging (chat, group
+                  creation and management) for Mgram, and integrated Zoom
+                  Meeting API, Stripe, and IPay88.
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="timeline-item reveal-up" style="--delay: 0.4s">
+            <div class="timeline-marker">
+              <div class="timeline-dot"></div>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-date">2021 &mdash; 2022</span>
+                  <h3 class="timeline-role">Backend Developer</h3>
+                  <span class="timeline-company">Quoality</span>
+                </div>
+              </div>
+              <ul class="timeline-details">
+                <li>
+                  Built the backend from scratch for The Hosteller, one of
+                  India's largest backpacker hostel chains.
+                </li>
+                <li>
+                  Developed a customized booking engine integrating eZee
+                  reservation APIs to increase guest-booking revenue.
+                </li>
+                <li>
+                  Delivered APIs on Node.js/Express with AWS Lambda, S3, SES,
+                  MongoDB, and Razorpay payments.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Section -->
+    <section class="section ai" id="ai">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num reveal-up">05</span>
+          <h2 class="section-title reveal-up">
+            How I Work with <span class="text-accent">AI</span>
+          </h2>
+          <p class="section-subtitle reveal-up">
+            AI runs through how I build and debug, from writing code to digging
+            into production issues. Here's the actual stack.
+          </p>
+        </div>
+        <div class="ai-stack">
+          <div class="ai-tool-card featured reveal-up" style="--delay: 0.1s">
+            <span class="ai-tool-role">Primary tool</span>
+            <h3 class="ai-tool-name">Claude Code</h3>
+            <p>
+              Daily driver for coding, refactoring, debugging and code review,
+              including the architecture discussions that happen before a line
+              of code gets written.
+            </p>
+          </div>
+          <div class="ai-tool-card wide reveal-up" style="--delay: 0.2s">
+            <span class="ai-tool-role">Model Context Protocol</span>
+            <h3 class="ai-tool-name">MCP</h3>
+            <p>
+              Wired into the editor to pull real context while debugging:
+              querying data, tracing issues across systems, and operational
+              lookups without switching tools.
+            </p>
+            <div class="ai-connected">
+              <span class="ai-connected-label">Connected to</span>
+              <span class="ai-chip">Postgres (read-only)</span>
+              <span class="ai-chip">Slack</span>
+              <span class="ai-chip">Linear</span>
+            </div>
+          </div>
+          <div class="ai-tool-card reveal-up" style="--delay: 0.3s">
+            <span class="ai-tool-role">Ideation</span>
+            <h3 class="ai-tool-name">ChatGPT</h3>
+            <p>
+              Brainstorming, exploring approaches, and talking through design
+              trade-offs early on.
+            </p>
+          </div>
+          <div class="ai-tool-card reveal-up" style="--delay: 0.4s">
+            <span class="ai-tool-role">AI IDE</span>
+            <h3 class="ai-tool-name">Cursor</h3>
+            <p>
+              Fast inline completion for day-to-day editing when momentum
+              matters more than conversation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section blog" id="blog">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num reveal-up">06</span>
+          <h2 class="section-title reveal-up">
+            Writing <span class="text-accent">&amp; Notes</span>
+          </h2>
+          <p class="section-subtitle reveal-up">
+            Short write-ups on backend problems I've actually had to solve in
+            production.
+          </p>
+        </div>
+        <div class="blog-list">
+          <a href="#" class="blog-card reveal-up" style="--delay: 0.1s">
+            <div class="blog-card-top">
+              <span class="blog-tag">PostgreSQL</span>
+              <span class="blog-status">Draft</span>
+            </div>
+            <h3 class="blog-title">
+              Fixing PostgreSQL connection exhaustion at 100 RPS
+            </h3>
+            <p class="blog-excerpt">
+              How a gift-card order path hit a ~40% failure rate under load, and
+              the connection-pool fix that brought it back to zero.
+            </p>
+            <span class="blog-meta">7 min read</span>
+          </a>
+          <a href="#" class="blog-card reveal-up" style="--delay: 0.2s">
+            <div class="blog-card-top">
+              <span class="blog-tag">Payments</span>
+              <span class="blog-status">Draft</span>
+            </div>
+            <h3 class="blog-title">
+              Reconciling failed wallet payments without double-charging
+            </h3>
+            <p class="blog-excerpt">
+              Designing a payment-capture reconciliation flow that recovers
+              money stuck between the gateway and the wallet, exactly once.
+            </p>
+            <span class="blog-meta">6 min read</span>
+          </a>
+          <a href="#" class="blog-card reveal-up" style="--delay: 0.3s">
+            <div class="blog-card-top">
+              <span class="blog-tag">System Design</span>
+              <span class="blog-status">Draft</span>
+            </div>
+            <h3 class="blog-title">Designing a multi-currency wallet ledger</h3>
+            <p class="blog-excerpt">
+              Running balances, idempotency, and storing money as integers to
+              kill floating-point drift before it ever reaches a user.
+            </p>
+            <span class="blog-meta">8 min read</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-num reveal-up">07</span>
+          <h2 class="section-title reveal-up">
+            Let's <span class="text-accent">Connect</span>
+          </h2>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-text reveal-up">
+            <p>
+              Have a project in mind or just want to chat? I'm always open to
+              discussing new opportunities and creative ideas.
+            </p>
+          </div>
+          <div class="contact-cards">
+            <a
+              href="mailto:bhadanedinesh49@gmail.com"
+              class="contact-card reveal-up"
+              style="--delay: 0.1s"
+              data-magnetic
+            >
+              <div class="contact-card-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                  />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-card-label">Email</span>
+                <span class="contact-card-value"
+                  >bhadanedinesh49@gmail.com</span
+                >
+              </div>
+              <button
+                class="copy-btn"
+                data-copy="bhadanedinesh49@gmail.com"
+                aria-label="Copy email"
+              >
+                <svg
+                  class="copy-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  />
+                </svg>
+                <svg
+                  class="check-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </button>
+            </a>
+            <a
+              href="https://github.com/Dinesh3098"
+              target="_blank"
+              rel="noopener"
+              class="contact-card reveal-up"
+              style="--delay: 0.2s"
+              data-magnetic
+            >
+              <div class="contact-card-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+                  />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-card-label">GitHub</span>
+                <span class="contact-card-value">@Dinesh3098</span>
+              </div>
+              <button
+                class="copy-btn"
+                data-copy="https://github.com/Dinesh3098"
+                aria-label="Copy GitHub link"
+              >
+                <svg
+                  class="copy-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  />
+                </svg>
+                <svg
+                  class="check-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/iamdb/"
+              target="_blank"
+              rel="noopener"
+              class="contact-card reveal-up"
+              style="--delay: 0.3s"
+              data-magnetic
+            >
+              <div class="contact-card-icon">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <div>
+                <span class="contact-card-label">LinkedIn</span>
+                <span class="contact-card-value">@iamdb</span>
+              </div>
+              <button
+                class="copy-btn"
+                data-copy="https://www.linkedin.com/in/iamdb/"
+                aria-label="Copy LinkedIn link"
+              >
+                <svg
+                  class="copy-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" />
+                  <path
+                    d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"
+                  />
+                </svg>
+                <svg
+                  class="check-icon"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container footer-inner">
+        <span class="footer-text"
+          >Built with vanilla HTML, CSS & JS. No frameworks, no dependencies,
+          just clean code.</span
+        >
+        <span class="footer-text">&copy; 2026 Dinesh Bhadane</span>
+      </div>
+    </footer>
+
+    <div class="copy-toast" id="copyToast">Copied to clipboard!</div>
+    <script src="script.js"></script>
+  </body>
+</html>
