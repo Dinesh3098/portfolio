@@ -227,7 +227,8 @@ if (roleEl) {
     'System Designer',
     'Distributed Systems',
     'Database Optimizer',
-    'Reliability & Scale'
+    'Reliability & Scale',
+    'Mentor'
   ];
   let roleIndex = 0;
   let charIndex = 0;
