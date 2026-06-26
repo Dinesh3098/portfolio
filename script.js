@@ -226,9 +226,8 @@ if (roleEl) {
   const roles = [
     'System Designer',
     'Distributed Systems',
-    'Payments Engineer',
     'Database Optimizer',
-    'Cloud Engineer'
+    'Reliability & Scale'
   ];
   let roleIndex = 0;
   let charIndex = 0;
