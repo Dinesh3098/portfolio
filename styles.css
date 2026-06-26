@@ -624,7 +624,7 @@ ul { list-style: none; }
 .hero-actions {
   display: flex;
   gap: 16px;
-  margin-bottom: 64px;
+  margin-bottom: 48px;
   flex-wrap: wrap;
 }
 
@@ -721,7 +721,7 @@ ul { list-style: none; }
 /* Scroll Indicator */
 .scroll-indicator {
   position: absolute;
-  bottom: 40px;
+  bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -746,6 +746,14 @@ ul { list-style: none; }
   50% { transform: scaleY(1); transform-origin: top; }
   50.1% { transform-origin: bottom; }
   100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* Hide the scroll cue when the viewport is too short to clear the hero
+   content (otherwise it overlaps the metrics row). It's decorative only. */
+@media (max-height: 900px) {
+  .scroll-indicator {
+    display: none;
+  }
 }
 
 /* --- Sections Common --- */
