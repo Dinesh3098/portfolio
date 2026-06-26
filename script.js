@@ -224,13 +224,11 @@ window.addEventListener('scroll', () => {
 const roleEl = document.getElementById('roleText');
 if (roleEl) {
   const roles = [
-    'System Architect',
-    'API Designer',
-    'Cloud Engineer',
-    'DevOps Enthusiast',
-    'Problem Solver',
-    'Microservices Expert',
-    'Database Optimizer'
+    'System Designer',
+    'Distributed Systems',
+    'Payments Engineer',
+    'Database Optimizer',
+    'Cloud Engineer'
   ];
   let roleIndex = 0;
   let charIndex = 0;
