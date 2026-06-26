@@ -571,11 +571,12 @@ ul { list-style: none; }
 .hero-role {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-bottom: 28px;
   font-family: var(--font-mono);
-  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
   flex-wrap: wrap;
+  line-height: 1.5;
 }
 
 .role-prefix {
@@ -595,7 +596,6 @@ ul { list-style: none; }
 .role-dynamic {
   color: var(--accent-light);
   font-weight: 600;
-  min-width: 180px;
 }
 
 .role-cursor {
